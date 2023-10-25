@@ -4,7 +4,7 @@ const createDatabase = async () => {
   const poolWithoutDatabase = new Pool({
     user: "postgres",
     host: "database",
-    password: "0038",
+    password: "pg-password",
     database: "postgres",
     port: "5432",
   });
@@ -31,7 +31,7 @@ const createDatabase = async () => {
 const pool = new Pool({
   user: "postgres",
   host: "database",
-  password: "0038",
+  password: "pg-password",
   database: "retronatus",
   port: "5432",
 });
