@@ -100,7 +100,7 @@ const loginUser = async (req, res) => {
   const user = userResponse.rows[0];
 
   if (user.password !== password) {
-    return res.status(401).json({ message: "Senha incorreta" });
+    return res.status(400).json({ message: "Senha incorreta" });
   }
 
   res.status(200).json({ message: "Login bem-sucedido" });
