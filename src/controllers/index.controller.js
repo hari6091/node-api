@@ -74,9 +74,9 @@ const getUsers = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const { name, email } = req.body;
+  const { name, email, password } = req.body;
   const response = await pool.query(
-    "INSERT INTO users (name, email) VALUES ($1, $2)",
+    "INSERT INTO users (name, email, password) VALUES ($1, $2, $3)",
     [name, email]
   );
   res.json({
