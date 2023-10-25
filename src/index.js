@@ -1,3 +1,4 @@
+const cors = require("cors");
 const express = require("express");
 const {
   createDatabase,
@@ -5,6 +6,17 @@ const {
   addUser,
 } = require("./controllers/index.controller");
 const app = express();
+
+app.set("trust proxy", 1); 
+
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+    optionSuccessStatus: 200,
+    "Access-Control-Allow-Origin": "*",
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
